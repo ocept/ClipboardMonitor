@@ -1,0 +1,20 @@
+﻿//Create db
+
+CREATE TABLE [capture] (
+[captureID] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+[timestamp] TIMESTAMP  NOT NULL
+);
+
+CREATE TABLE [textData] (
+[dataID] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+[captureID] INTEGER NOT NULL,
+[text] TEXT  NOT NULL,
+FOREIGN KEY(captureID) REFERENCES captureID(capture)
+);
+
+CREATE TABLE [imageData] (
+[dataID] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+[captureID] INTEGER  NOT NULL,
+[image] BLOB  NULL
+FOREIGN KEY(captureID) REFERENCES captureID(capture)
+)
