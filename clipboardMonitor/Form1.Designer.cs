@@ -33,12 +33,13 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
             this.treeMenu = new System.Windows.Forms.TreeView();
+            this.label2 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.formatSelector = new System.Windows.Forms.ComboBox();
             this.resultTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.clearCaptureButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.clearCaptureButton);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.treeMenu);
             // 
@@ -81,6 +83,16 @@
             this.splitContainer1.SplitterDistance = 252;
             this.splitContainer1.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-1, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Clipboard data captures";
+            // 
             // treeMenu
             // 
             this.treeMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -89,9 +101,19 @@
             this.treeMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.treeMenu.Location = new System.Drawing.Point(0, 34);
             this.treeMenu.Name = "treeMenu";
-            this.treeMenu.Size = new System.Drawing.Size(249, 506);
+            this.treeMenu.Size = new System.Drawing.Size(249, 467);
             this.treeMenu.TabIndex = 0;
             this.treeMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeMenu_AfterSelect);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1, -1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Data for selected capture";
             // 
             // webBrowser1
             // 
@@ -124,25 +146,15 @@
             this.resultTextBox.Size = new System.Drawing.Size(484, 502);
             this.resultTextBox.TabIndex = 5;
             // 
-            // label1
+            // clearCaptureButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Clipboard data captures";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1, -1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Data for selected capture";
+            this.clearCaptureButton.Location = new System.Drawing.Point(3, 507);
+            this.clearCaptureButton.Name = "clearCaptureButton";
+            this.clearCaptureButton.Size = new System.Drawing.Size(142, 32);
+            this.clearCaptureButton.TabIndex = 2;
+            this.clearCaptureButton.Text = "Clear list";
+            this.clearCaptureButton.UseVisualStyleBackColor = true;
+            this.clearCaptureButton.Click += new System.EventHandler(this.clearCaptureButton_Click);
             // 
             // mainWindow
             // 
@@ -172,6 +184,7 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button clearCaptureButton;
     }
 }
 

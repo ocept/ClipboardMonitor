@@ -215,5 +215,26 @@ namespace clipboardMonitor
                 }
             }
         }
+
+        private void clearCaptureButton_Click(object sender, EventArgs e)
+        {
+            if (db.State == System.Data.ConnectionState.Open)
+            {
+                SQLiteCommand clearCmd = new SQLiteCommand(db);
+                clearCmd.CommandText = @"DELETE FROM capture; 
+                                        DELETE FROM htmlData; 
+                                        DELETE FROM imageData; 
+                                        DELETE FROM textData; 
+                                        DELETE FROM unicodeData;";
+                int rowsDeleted = clearCmd.ExecuteNonQuery();
+                System.Windows.Forms.MessageBox.Show(rowsDeleted + " Records deleted.");
+                treeMenu.Nodes.Clear();
+
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Database error");
+            }
+        }
     }
 }
